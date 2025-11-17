@@ -1,10 +1,11 @@
-# This file can be left as is for now, but the connection will be managed in main.py
-# Or, to simplify, you can just have the MONGO_URI and DATABASE_NAME constants here.
-
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-MONGO_URI = os.getenv("MONGODB_URI", "mongodb://localhost:27017") # Default MongoDB port is 27017
-DATABASE_NAME = "printer_portal"
+# This is correct. It will be loaded from Render's environment variables.
+MONGO_URI = os.getenv("MONGO_URI") 
+
+# --- THIS IS THE FIX ---
+# Set the default to match your actual database name.
+DATABASE_NAME = os.getenv("DATABASE_NAME", "printerportal")
