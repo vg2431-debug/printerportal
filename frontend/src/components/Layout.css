@@ -1,0 +1,87 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  height: 64px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.header-logo a {
+  text-decoration: none;
+  color: #111;
+}
+
+.app-nav a {
+  margin: 0 16px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.app-nav a:hover {
+  color: #007bff;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-user span {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.logout-button {
+  background: none;
+  border: 1px solid #d9d9d9;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  color: #333; /* Make text visible */
+}
+
+.logout-button:hover {
+  background: #f4f7f6;
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.app-content {
+  flex: 1;
+  background-color: #f4f7f6;
+  padding: 24px;
+  
+  /* --- CENTER ALIGNMENT --- */
+  /* This makes the content area a flex container */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  padding: 24px; /* Add padding */
+}
+
+/* This targets the actual page component (div) inside */
+.app-content > * {
+  width: 100%;
+  max-width: 1400px; /* Max width for pages */
+}

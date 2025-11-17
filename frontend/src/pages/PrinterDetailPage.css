@@ -1,0 +1,189 @@
+/* --- NEW: Page Header Layout --- */
+.printer-detail-header {
+  display: grid;
+  /* Columns: 1 fraction (flexible) and 'auto' (fit content) */
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* This new container holds the left-side content (details + summary) */
+.printer-info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* Space between details and summary */
+}
+
+/* --- Printer Header (Card 1) --- */
+.printer-header {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.printer-header h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+.printer-header p {
+  margin: 4px 0;
+  font-size: 1rem;
+}
+
+/* --- NEW: Summary Box (Card 2) --- */
+.printer-summary-box {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.printer-summary-box h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.summary-item h4 {
+  margin: 0 0 4px 0;
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 600;
+}
+.summary-item p {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+/* --- CALENDAR STYLE FIXES --- */
+.calendar-container {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 400px; /* Constrain calendar width */
+}
+
+.react-calendar {
+  border: none;
+  width: 100%;
+}
+
+/* 1. Make month/arrow buttons dark */
+.react-calendar__navigation button,
+.react-calendar__navigation__label {
+  color: #333; /* Dark font */
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* 2. Make Sunday header red */
+.react-calendar__month-view__weekdays__weekday:nth-child(7n) abbr {
+  color: #dc3545; /* Red */
+  text-decoration: none;
+}
+
+/* 3. Make all date text dark */
+.react-calendar__tile abbr {
+  color: #333;
+  font-weight: 600;
+}
+.react-calendar__month-view__days__day--neighboringMonth abbr {
+  color: #ccc;
+}
+
+/* 4. Make all Sunday dates red */
+.react-calendar__month-view__days__day:nth-child(7n) abbr {
+  color: #dc3545;
+}
+
+.react-calendar__tile {
+  position: relative;
+  height: 50px;
+}
+
+/* --- 5. BADGE COLOR FIXES --- */
+.calendar-job-count {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: help;
+  
+  /* Normal state: Light green bg, blue text */
+  background-color: #d4edda;
+  color: #007bff;
+  border: 1px solid #c3e6cb;
+}
+
+/* Active (clicked) date */
+.react-calendar__tile--active {
+  background: #007bff !important;
+  color: white !important;
+}
+
+/* Active date's badge: White bg, dark green text */
+.react-calendar__tile--active .calendar-job-count {
+  background-color: #fff;
+  color: #155724;
+  border: 1px solid #155724;
+}
+
+/* Ensure active Sunday text is white */
+.react-calendar__tile--active:nth-child(7n+1) abbr {
+  color: white !important;
+}
+
+/* --- Job List Header --- */
+.job-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.job-list-header h3 {
+  margin: 0;
+}
+.job-list-header button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  background: #6c757d;
+}
+
+/* --- Job Table --- */
+.jobs-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.jobs-table th,
+.jobs-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.jobs-table th {
+  background-color: #f9f9f9;
+}
+
+.jobs-table tr:last-child td {
+  border-bottom: none;
+}
